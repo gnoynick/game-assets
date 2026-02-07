@@ -1,0 +1,179 @@
+{
+  "version": 1,
+  "assets_base_url": "https://raw.githubusercontent.com/gnoynick/game-assets/main/assets",
+  "acts": [
+    {
+      "id": "act1",
+      "name": "Планета Шелезяка",
+      "planet": {
+        "name": "Шелезяка",
+        "subtitle": "Планета роботов",
+        "color": "#ef4444",
+        "icon": "precision_manufacturing",
+        "locked": false
+      },
+      "intro_video": "videos/planet_intro.mp4",
+      "scenes": [
+        {
+          "id": "bank_outside",
+          "background": "images/background/bank_out.jpg",
+          "dialogues": [
+            {
+              "speaker": "???",
+              "text": "А вот и вы! Здравствуйте, здравствуйте!",
+              "character_image": "images/seleznev/seleznev_black.png",
+              "reveals_name": false
+            },
+            {
+              "speaker": "???",
+              "text": "Позвольте представиться — я профессор Игорь Селезнёв, исследователь космических цивилизаций. Мы вас уже заждались!",
+              "character_image": "images/seleznev/seleznev_hi.png",
+              "reveals_name": true,
+              "real_name": "Профессор Селезнёв"
+            },
+            {
+              "speaker": "Профессор Селезнёв",
+              "text": "Мы получили сигнал SOS с этой планеты и немедленно прилетели сюда, чтобы разобраться в ситуации.",
+              "character_image": "images/seleznev/seleznev.png"
+            },
+            {
+              "speaker": "Профессор Селезнёв",
+              "text": "Сигнал шёл откуда-то отсюда... Видите это здание? Это заброшенный роботизированный банк «Ржавый Болт».",
+              "character_image": "images/seleznev/seleznev_show.png"
+            },
+            {
+              "speaker": "Профессор Селезнёв",
+              "text": "Нужно зайти внутрь и выяснить, кто послал сигнал и что тут происходит. Пойдёмте вместе!",
+              "character_image": "images/seleznev/seleznev.png"
+            }
+          ],
+          "after_dialogue": {
+            "type": "button",
+            "text": "Войти в банк",
+            "icon": "door_front_door",
+            "color": "#ef4444",
+            "action": {
+              "type": "play_video_then_scene",
+              "video": "videos/seleznev_walk.mp4",
+              "next_scene": "bank_inside"
+            }
+          }
+        },
+        {
+          "id": "bank_inside",
+          "background": "images/background/bank_in.jpg",
+          "dialogues": [
+            {
+              "speaker": "Профессор Селезнёв",
+              "text": "Сигнал SOS совсем близко... Он определённо шёл откуда-то из этого здания.",
+              "character_image": "images/seleznev/seleznev.png"
+            },
+            {
+              "speaker": "Профессор Селезнёв",
+              "text": "Давайте осмотрим это место повнимательнее. Тут повсюду какие-то старые механизмы и ржавые терминалы...",
+              "character_image": "images/seleznev/seleznev_look.png"
+            },
+            {
+              "speaker": "Профессор Селезнёв",
+              "text": "Подождите... Что это? На столе лежит какой-то документ!",
+              "character_image": "images/seleznev/seleznev_look.png"
+            },
+            {
+              "speaker": "Профессор Селезнёв",
+              "text": "Это договор между двумя роботами: Бухгалтером и Коммерсантом. Дайте-ка прочитаю...",
+              "character_image": "images/seleznev/seleznev_read.png"
+            },
+            {
+              "speaker": "Профессор Селезнёв",
+              "text": "Согласно условиям, Коммерсант обязуется передать Бухгалтеру право на использование уникального алгоритма оптимизации логистики грузоперевозок.",
+              "character_image": "images/seleznev/seleznev_read.png"
+            },
+            {
+              "speaker": "Профессор Селезнёв",
+              "text": "Взамен Бухгалтер обязуется предоставить Коммерсанту эквивалентную сумму в «Алмазиках» — цифровой валюте, выпускаемой ИИ «Клюковка» планеты Шелезяка.",
+              "character_image": "images/seleznev/seleznev_read.png"
+            },
+            {
+              "speaker": "Профессор Селезнёв",
+              "text": "Хм, тут есть серьёзные неясности... Во-первых, не определён момент «передачи права» — это подписание контракта, фактическая передача алгоритма или момент его активации?",
+              "character_image": "images/seleznev/seleznev_think.png"
+            },
+            {
+              "speaker": "Профессор Селезнёв",
+              "text": "Во-вторых, ИИ «Клюковка» вышел из строя, и курс «Алмазика» невозможно определить. А в-третьих, споры решаются «в соответствии с обычаями делового оборота планеты Шелезяка»...",
+              "character_image": "images/seleznev/seleznev_think.png"
+            },
+            {
+              "speaker": "Профессор Селезнёв",
+              "text": "Мне нужна ваша помощь! Какая область права наиболее уместна для разрешения споров по такому контракту?",
+              "character_image": "images/seleznev/seleznev_think.png"
+            }
+          ],
+          "after_dialogue": {
+            "type": "quiz",
+            "question": "Какая область права наиболее уместна для разрешения споров по контрактам в подобной ситуации?",
+            "answers": [
+              {
+                "text": "А) Гражданское право, в частности общие нормы договорного права.",
+                "correct": false
+              },
+              {
+                "text": "Б) Информационное право и гражданское право.",
+                "correct": true
+              },
+              {
+                "text": "В) Закон о защите прав потребителей, т.к. Бухгалтер выступает как потребитель.",
+                "correct": false
+              },
+              {
+                "text": "Г) Достаточно применение обычаев делового оборота планеты Шелезяка.",
+                "correct": false
+              }
+            ],
+            "correct_explanation": "Отлично! Информационное право регулирует отношения, связанные с цифровыми активами и ИИ, а гражданское право — договорные обязательства. Вместе они охватывают все аспекты этого контракта.",
+            "wrong_explanation": "Правильный ответ — Б. В данном случае затрагиваются и цифровые активы (информационное право), и договорные обязательства (гражданское право). Ни одна из других отраслей не охватывает все аспекты спора.",
+            "post_quiz_dialogues": [
+              {
+                "speaker": "Профессор Селезнёв",
+                "text": "Вы совершенно правы! Здесь переплетаются и цифровые технологии, и договорные отношения.",
+                "character_image": "images/seleznev/seleznev_understand.png"
+              },
+              {
+                "speaker": "Профессор Селезнёв",
+                "text": "В целом, больше ничего интересного тут нет... Но сигнал SOS всё ещё поступает!",
+                "character_image": "images/seleznev/seleznev_understand.png"
+              },
+              {
+                "speaker": "Профессор Селезнёв",
+                "text": "Предлагаю пройти в следующую комнату. Думаю, сигнал исходит всё-таки оттуда!",
+                "character_image": "images/seleznev/seleznev_understand.png"
+              }
+            ],
+            "after_quiz": {
+              "type": "button",
+              "text": "В следующую комнату",
+              "icon": "arrow_forward_rounded",
+              "color": "#3b82f6",
+              "action": {
+                "type": "next_scene",
+                "next_scene": "room2"
+              }
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "locked_planets": [
+    {
+      "name": "Двух Капитанов",
+      "color": "#3b82f6",
+      "icon": "sailing"
+    },
+    {
+      "name": "Блук",
+      "color": "#8b5cf6",
+      "icon": "water"
+    }
+  ]
+}
